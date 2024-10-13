@@ -1,0 +1,78 @@
+/*estilos iniciales*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/*estilos body*/
+body{
+    min-height: 100vh; /*se ajuste al 100% del alto de la pantalla*/
+    background-color: rgb(110, 139, 97);/*color fondo*/
+    display: flex;
+    justify-content: center;/*justificado pagina*/
+    align-items: center;
+}
+
+/*estilos calculadora*/
+.calculadora{
+    background-color: rgb(38, 56, 63);/*fondo coloe*/
+    color: rgb(126, 155, 166);/*funte en el contenedor*/
+    display: grid;/*distribuir en una cuadricula*/
+    grid-template-columns: repeat(4,1fr);/*distribuir en 4 columnas*/
+    width: 350px;/*ancho*/
+    padding: 1rem;
+    border-radius: 1rem; /*1rem equivale 16px*/
+    gap: 0.5rem;/*separacion interna*/
+}
+
+/*ajuste clase pantalla*/
+.pantalla{
+    grid-column: 1 / 5;/*de 1 a 5*/
+    background-color: rgb(255, 255, 255);/*color pantalla*/
+    padding: 1rem;
+    font-size: 3rem;/*tamaño fuente*/
+    text-align: right;/*alinear a la derecha*/
+    border-radius: 0.5rem;
+    font-weight: 600;/*negrilla fuente*/
+    margin-bottom: 0.5rem;/*margen de abajo*/
+    
+    /*1 ERROR) EL CONTENIDO SE SALE DE LA PANTALLA SOLUCION:*/
+    /*La overflow-xpropiedad especifica si se debe recortar el contenido, agregar una barra de desplazamiento o mostrar el 
+    contenido de desbordamiento de un elemento a nivel de bloque, cuando se desborda en los bordes izquierdo y derecho.*/
+    overflow-x: auto;/*  crea un scroll lateral  si el contenido excede el ancho */
+}
+
+/*ajustes clase boton*/
+.boton{
+    background-color: rgb(85, 112, 123);
+    color: rgb(255, 255, 255);
+    border: 0;/*sin borde*/
+    padding: 1rem;
+    font-size: 1;
+    display: flex;/*se ajuste*/
+    justify-content: center;
+    align-items: center;
+    border-radius: .8rem;
+    cursor: pointer;/*mouse cambie a la mano*/
+}
+
+/*cuando el mouse pase por los botones cambie de color*/
+.boton:hover{
+    background-color: rgb(56, 75, 82);
+}
+
+/*botones especiales llamado id*/
+#cero{
+    grid-column: span 2;/*expanda en columnas*/
+}
+
+#igual{
+    grid-row: span 2;/*expanda en filas*/
+    background-color: rgb(45, 196, 181);
+}
+
+#igual:hover{
+    background-color: rgb(255, 159, 28);
+}
